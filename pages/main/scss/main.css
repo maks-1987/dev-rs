@@ -468,12 +468,11 @@ body {
 .wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 100vh auto;
-      grid-template-rows: 1fr 100vh auto;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
 }
 
+/* Start-screen section */
 .start-screen-wrapper {
   display: -ms-grid;
   display: grid;
@@ -605,6 +604,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding-top: 98px;
+  padding-bottom: 100px;
   -webkit-column-gap: 120px;
           column-gap: 120px;
 }
@@ -638,5 +638,77 @@ body {
 
 .about-content__text:not(.subtext) {
   margin-bottom: 25px;
+}
+
+/* Pets-section */
+.pets-container {
+  background-color: #f6f6f6;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.pets-container__title {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  margin-bottom: 60px;
+}
+
+.pets-container__slider img {
+  max-width: 270px;
+}
+
+.pets-container__button {
+  width: 260px;
+}
+
+.pets-slider {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(40px, 55px) (minmax(100px, 1fr))[3] minmax(40px, 55px);
+      grid-template-columns: minmax(40px, 55px) repeat(3, minmax(100px, 1fr)) minmax(40px, 55px);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 92px;
+}
+
+.pets-slider .left-arrow,
+.pets-slider .right-arrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid #f1cdb3;
+  background: url("../../../assets/icons/Arrow.svg") center no-repeat;
+  margin-top: 30px;
+}
+
+.pets-slider .right-arrow {
+  -ms-grid-column-align: right;
+      justify-self: right;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.pets-slider .slider-item img {
+  margin-bottom: 30px;
+}
+
+.pets-slider .slider-item__name {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  margin-bottom: 30px;
+}
+
+.pets-slider .slider-item button {
+  width: 185px;
 }
 /*# sourceMappingURL=main.css.map */
