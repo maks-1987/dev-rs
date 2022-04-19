@@ -423,6 +423,35 @@ img {
 
 /* colors */
 /* magin-padding */
+.button {
+  font-family: 'Georgia';
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  height: 50px;
+  width: 205px;
+  border-radius: 100px;
+  border: 2px solid #f1cdb3;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.button.btn-prim {
+  background-color: #f1cdb3;
+}
+
+.button.btn-prim:hover {
+  background-color: #fddcc4;
+}
+
+.button.btn-second {
+  background-color: transparent;
+}
+
+.button.btn-second:hover {
+  background-color: #fddcc4;
+}
+
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -560,25 +589,54 @@ body {
   margin-bottom: 8px;
 }
 
-.start-screen__button .button-primary {
-  font-family: 'Georgia';
-  font-size: 17px;
-  letter-spacing: 0.06em;
-  height: 50px;
-  width: 206px;
-  border-radius: 100px;
-  border: 2px solid #f1cdb3;
-  background-color: #f1cdb3;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-
-.start-screen__button .button-primary:hover {
-  background-color: #fddcc4;
-}
-
 .start-screen-img {
   background: 33px bottom/93% no-repeat url(../../../assets/img/start-screen-puppy.png);
+}
+
+/* About-section */
+.about-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 98px;
+  -webkit-column-gap: 120px;
+          column-gap: 120px;
+}
+
+.about-img {
+  max-width: 300px;
+}
+
+.about-content {
+  max-width: 430px;
+}
+
+.about-content__title {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  margin-bottom: 25px;
+}
+
+.about-content__text {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: #4c4c4c;
+}
+
+.about-content__text:not(.subtext) {
+  margin-bottom: 25px;
 }
 /*# sourceMappingURL=main.css.map */
