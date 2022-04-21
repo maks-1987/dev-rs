@@ -703,6 +703,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   column-gap: 10%;
+  row-gap: 54px;
 }
 
 .help-section-container {
@@ -713,7 +714,6 @@ body {
 .help-item {
   text-align: center;
   cursor: pointer;
-  margin-bottom: 55px;
 }
 
 .help-item__icon {
@@ -730,5 +730,75 @@ body {
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
+}
+
+/* Donation-section */
+.donation-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  column-gap: 30px;
+  background-color: #f6f6f6;
+}
+
+.donation-section__item.right-side {
+  max-width: 380px;
+}
+
+.donation-section__title {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  width: 82%;
+  margin-bottom: 20px;
+}
+
+.donation-section__subtitle {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+}
+
+.donation-section__card-num {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  max-width: 290px;
+  position: relative;
+  padding: 10px 0px 10px 60px;
+  margin-bottom: 20px;
+  background-color: #f1cdb3;
+  border-radius: 9px;
+}
+
+.donation-section__card-num::before {
+  content: '';
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 15px;
+  top: 3px;
+  background: url("../../../assets/icons/credit-card.svg") center 100% no-repeat;
+}
+
+.donation-section__text {
+  font-family: 'Arial';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #b2b2b2;
 }
 /*# sourceMappingURL=main.css.map */
