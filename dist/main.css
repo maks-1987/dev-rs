@@ -1,0 +1,73 @@
+/*!**********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/main.scss ***!
+  \**********************************************************************************************************************/
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.wrapper {
+  background-color: #e4d7e3;
+  height: 800px;
+  width: 760px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.inputText {
+  width: 99%;
+  height: 50%;
+}
+
+.kb-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: 350px;
+  justify-content: center;
+  align-content: center;
+}
+
+.kb-item {
+  flex: 0 0 5.5%;
+  min-width: 32px;
+  border: 1px solid #2e362e;
+  margin: 2px;
+  text-align: center;
+  line-height: 46px;
+  cursor: pointer;
+}
+.kb-item.backspace {
+  flex: 1 0 14%;
+}
+.kb-item.tab {
+  flex: 1 0 9%;
+}
+.kb-item.capslock {
+  flex: 1 0 12%;
+}
+.kb-item.enter {
+  flex: 1 0 14%;
+}
+.kb-item.shiftLeft {
+  flex: 1 0 17.5%;
+}
+.kb-item.shiftRight {
+  flex: 1 0 10%;
+}
+.kb-item.ctrlLeft, .kb-item.ctrlRight {
+  flex: 0 0 10%;
+}
+.kb-item.space {
+  flex: 1 0 20%;
+}
+
+.hidden {
+  display: none;
+}
