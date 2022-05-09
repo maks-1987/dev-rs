@@ -1,7 +1,7 @@
 import './assets/styles/main.scss';
 import './lang';
 
-const {keyCode, allKeysEn, allKeysEnShift} = require('./lang');
+const { keyCode, allKeysEn, allKeysEnShift } = require('./lang');
 
 const functionalKeys = [
   'Tab',
@@ -27,13 +27,13 @@ const descr = document.createElement('p');
 const shortcat = document.createElement('p');
 wrapper.className = 'wrapper';
 title.className = 'title';
-title.innerText = `Virtual keyboard RSschool`;
+title.innerText = 'Virtual keyboard RSSchool';
 textArea.className = 'inputText';
 descr.textContent = 'Клавиатура создана в операционной системе Windows';
 shortcat.textContent = 'Для переключения языка комбинация: Shift + Alt';
 
-function appendEl(elem, wrapper) {
-  wrapper.appendChild(elem);
+function appendEl(elem, container) {
+  container.appendChild(elem);
 }
 
 /* init keyboard  */
@@ -47,17 +47,19 @@ appendEl(kbWrapper, wrapper);
 appendEl(descr, wrapper);
 appendEl(shortcat, wrapper);
 
+/* bind data-attributes */
+function bindDataAttr() {
+  const kbItem = document.querySelectorAll('.kb-item');
+
+  kbItem.forEach((e, index) => {
+    e.dataset.keycode = keyCode[index];
+    e.classList.add(keyCode[index].toLocaleLowerCase());
+  });
+}
+
 /* init keys */
-createKeys();
-const kbItem = document.querySelectorAll('.kb-item');
-// function changeKeysContentInit() {
-//   changeKeysContent(allKeysEn);
-// }
-
-changeKeysContent(allKeysEn);
-
 function createKeys() {
-  for (let i = 0; i < 64; i++) {
+  for (let i = 0; i < 64; i + 1) {
     const kbItem = document.createElement('div');
     kbItem.className = 'kb-item';
 
@@ -67,39 +69,38 @@ function createKeys() {
   bindDataAttr();
 }
 
+createKeys();
+const kbItem = document.querySelectorAll('.kb-item');
+
 function changeKeysContent(keysContent) {
-  kbItem.forEach((el, index) => {
-    el.innerText = keysContent[index];
+  kbItem.forEach((e, index) => {
+    e.innerText = keysContent[index];
   });
 }
 
-/* shift-event */
-document.addEventListener('keydown', shiftKeys);
-document.addEventListener('keyup', shiftKeysUp);
-kbWrapper.addEventListener('pointerdown', shiftKeysMouse);
-kbWrapper.addEventListener('pointerup', shiftKeysMouseUp);
+changeKeysContent(allKeysEn);
 
 function shiftKeys(e) {
   textArea.focus();
   kbItem.forEach((el) => {
-    if (el.dataset.keycode == e.code) {
+    if (el.dataset.keycode === e.code) {
       el.classList.add('active');
     }
   });
 
-  if (e.code == 'ShiftLeft' || e.code == 'ShiftRight') {
+  if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
     changeKeysContent(allKeysEnShift);
-  } else if (e.code == 'Tab') {
+  } else if (e.code === 'Tab') {
     e.preventDefault();
   }
 }
 
 function shiftKeysUp(e) {
   kbItem.forEach((el) => {
-    if (el.dataset.keycode == e.code) {
+    if (el.dataset.keycode === e.code) {
       el.classList.remove('active');
     }
-    if (e.code == 'ShiftLeft' || e.code == 'ShiftRight') {
+    if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
       changeKeysContent(allKeysEn);
     }
   });
@@ -107,8 +108,8 @@ function shiftKeysUp(e) {
 
 function shiftKeysMouse(e) {
   kbItem.forEach((el) => {
-    if (e.target.dataset.keycode == el.dataset.keycode) {
-      if (el.dataset.keycode == 'ShiftLeft' || el.dataset.keycode == 'ShiftRight') {
+    if (e.target.dataset.keycode === el.dataset.keycode) {
+      if (el.dataset.keycode === 'ShiftLeft' || el.dataset.keycode === 'ShiftRight') {
         changeKeysContent(allKeysEnShift);
       } else if (functionalKeys.includes(e.target.dataset.keycode)) {
         el.classList.add('active');
@@ -122,33 +123,17 @@ function shiftKeysMouse(e) {
 
 function shiftKeysMouseUp(e) {
   kbItem.forEach((el) => {
-    if (e.target.dataset.keycode == el.dataset.keycode) {
+    if (e.target.dataset.keycode === el.dataset.keycode) {
       e.target.classList.remove('active');
     }
-    if (el.dataset.keycode == 'ShiftLeft' || el.dataset.keycode == 'ShiftRight') {
+    if (el.dataset.keycode === 'ShiftLeft' || el.dataset.keycode === 'ShiftRight') {
       changeKeysContent(allKeysEn);
     }
   });
 }
 
-/* change languge */
-
-/* capslock event */
-/* wrapper.addEventListener('keydown', (e) => {
-  kbItem.forEach((el) => {
-    if (el.dataset.keycode == 'CapsLock') {
-      console.log('caps');
-      // el.classList.add('active');
-    }
-  });
-}); */
-
-/* bind data-attributes */
-function bindDataAttr() {
-  let kbItem = document.querySelectorAll('.kb-item');
-
-  kbItem.forEach((el, index) => {
-    el.dataset.keycode = keyCode[index];
-    el.classList.add(keyCode[index].toLocaleLowerCase());
-  });
-}
+/* shift-event */
+document.addEventListener('keydown', shiftKeys);
+document.addEventListener('keyup', shiftKeysUp);
+kbWrapper.addEventListener('pointerdown', shiftKeysMouse);
+kbWrapper.addEventListener('pointerup', shiftKeysMouseUp);
