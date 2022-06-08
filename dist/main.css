@@ -1,0 +1,113 @@
+/*!**********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/main.scss ***!
+  \**********************************************************************************************************************/
+.active {
+  background-color: #93da97;
+  animation: 0.3s keypress;
+  transform: scale(0.97);
+}
+
+@keyframes keypress {
+  0% {
+    background-color: initial;
+  }
+  100% {
+    background-color: #93da97;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.wrapper {
+  background-color: #e4d7e3;
+  height: 100vh;
+  width: 760px;
+  margin: 0 auto;
+  padding: 0px 10px;
+}
+.wrapper p {
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  padding: 20px 0px;
+  text-align: center;
+}
+
+.inputText {
+  width: 97%;
+  height: 42%;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.kb-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 250px;
+  justify-content: center;
+  align-content: center;
+  border: 5px solid #875050;
+  border-radius: 8px;
+  background-color: #e5dbdb;
+  padding: 2px;
+  margin-top: 20px;
+}
+
+.kb-item {
+  flex: 0 0 5.5%;
+  min-width: 32px;
+  border: 1px solid #2e362e;
+  margin: 2px;
+  text-align: center;
+  line-height: 46px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 0px #000000;
+  transition: background-color 0.4s, box-shadow 0.4s, scale 0.4s;
+}
+.kb-item.active {
+  box-shadow: none;
+}
+.kb-item.backspace, .kb-item.tab, .kb-item.delete, .kb-item.capslock, .kb-item.enter, .kb-item.shiftleft, .kb-item.arrowup, .kb-item.shiftright, .kb-item.controlleft, .kb-item.metaleft, .kb-item.altleft, .kb-item.altright, .kb-item.arrowleft, .kb-item.arrowdown, .kb-item.arrowright, .kb-item.controlright {
+  background-color: rgba(104, 46, 45, 0.25);
+}
+.kb-item.backspace.active, .kb-item.tab.active, .kb-item.delete.active, .kb-item.capslock.active, .kb-item.enter.active, .kb-item.shiftleft.active, .kb-item.arrowup.active, .kb-item.shiftright.active, .kb-item.controlleft.active, .kb-item.metaleft.active, .kb-item.altleft.active, .kb-item.altright.active, .kb-item.arrowleft.active, .kb-item.arrowdown.active, .kb-item.arrowright.active, .kb-item.controlright.active {
+  background-color: #93da97;
+}
+.kb-item.backspace {
+  flex: 1 0 14%;
+}
+.kb-item.tab {
+  flex: 1 0 9%;
+}
+.kb-item.capslock {
+  flex: 1 0 12%;
+}
+.kb-item.enter {
+  flex: 1 0 14%;
+}
+.kb-item.shiftleft {
+  flex: 1 0 17.5%;
+}
+.kb-item.shiftright {
+  flex: 1 0 10%;
+}
+.kb-item.controlleft, .kb-item.controlright {
+  flex: 0 0 10%;
+}
+.kb-item.space {
+  flex: 1 0 20%;
+}
+.kb-item:hover {
+  background-color: #a6d3a8;
+}
+
+.hidden {
+  display: none;
+}
